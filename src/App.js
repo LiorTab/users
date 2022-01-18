@@ -13,7 +13,6 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      let userData;
       try {
         fetch('https://jsonplaceholder.typicode.com/users').then((response) => response.json()).then((users) => setUsers(users));
         console.log(users)
@@ -22,9 +21,7 @@ function App() {
 
       } catch (error) {
         console.log(error);
-        userData = [];
       }
-      setUsers(userData);
     })();
   }, []);
 
